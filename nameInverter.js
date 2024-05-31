@@ -4,6 +4,9 @@ const nameInverter = function (name) {
   }
 
   const regex = /\s/;
+  if (name.includes(".")) {
+    return "";
+  }
   if (regex.test(name)) {
     const nameArr = name.split(regex);
     let newNameArr = [];
