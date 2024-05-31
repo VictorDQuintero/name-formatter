@@ -6,9 +6,10 @@ const nameInverter = function (name) {
   const regex = /\s/;
   const honoRegex = /\./;
 
-  if (honoRegex.test(name)) {
-    return "";
-  }
+  // if (honoRegex.test(name) && name.split("")) {
+  //   return "";
+  // }
+
   if (regex.test(name)) {
     const nameArr = name.split(regex);
     let newNameArr = [];
@@ -19,10 +20,21 @@ const nameInverter = function (name) {
     }
 
     if (newNameArr.length === 1) {
+      if (honoRegex.test(newNameArr.join(""))) {
+        return "";
+      }
+
       name = newNameArr.join("");
       return name;
     }
     if (newNameArr.length === 2) {
+      if (honoRegex.test(newNameArr.join(""))) {
+        const honorific = newNameArr[0];
+        const firstName = newNameArr[1];
+        name = honorific + " " + firstName;
+        return name;
+      }
+
       const firstName = newNameArr[0];
       const lastName = newNameArr[1];
       name = lastName + ", " + firstName;
