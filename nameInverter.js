@@ -41,6 +41,23 @@ const nameInverter = function (name) {
 
       return name;
     }
+
+    // now do the same with 3 elements
+    if (newNameArr.length === 3) {
+      if (honoRegex.test(newNameArr.join(""))) {
+        const honorific = newNameArr[0];
+        const firstName = newNameArr[1];
+        const lastName = newNameArr[2];
+        name = honorific + " " + lastName + ", " + firstName;
+        return name;
+      }
+
+      const firstName = newNameArr[0];
+      const lastName = newNameArr[1];
+      name = lastName + ", " + firstName;
+
+      return name;
+    }
   }
 
   return name;
