@@ -39,4 +39,9 @@ describe("nameInverter", function () {
     const expectedOutput = "Dr. first";
     assert.equal(nameInverter(inputName), expectedOutput);
   });
+  it('should return a "honorific last-name, first-name" when passed honorific first-name last-name', function () {
+    const inputName = "Dr. first-name last-name";
+    const expectedOutput = "Dr. last-name, first-name";
+    assert.equal(nameInverter(inputName), expectedOutput);
+  });
 });
