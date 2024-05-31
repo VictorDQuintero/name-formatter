@@ -49,4 +49,9 @@ describe("nameInverter", function () {
     const expectedOutput = "Dr. last-name, first-name";
     assert.equal(nameInverter(inputName), expectedOutput);
   });
+  it("should throw an error when name is undefined", function () {
+    const inputName = undefined;
+    const expectedOutput = "throw 'Error'";
+    assert.equal(nameInverter(inputName), expectedOutput);
+  });
 });
