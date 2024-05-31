@@ -4,7 +4,9 @@ const nameInverter = function (name) {
   }
 
   const regex = /\s/;
-  if (name.includes(".")) {
+  const honoRegex = /\./;
+
+  if (honoRegex.test(name)) {
     return "";
   }
   if (regex.test(name)) {
